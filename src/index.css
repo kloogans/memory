@@ -164,6 +164,14 @@ body {
   z-index: 1;
 }
 
+/*div.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}*/
+
 body:not(.modal) .overlay {
   display: none;
 }

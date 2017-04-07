@@ -73,11 +73,11 @@ checkCard = (newCard) => {
     if (this.state.gameOver === true) {
       modalState = 'App modal'
     }
-    if (this.state.gameOver === true) {
+    if (this.state.gameOver === false) {
       modalState = 'App'
     }
    return (
-     <div className={modalState}>
+     <div className="modalContainer">
      <Modal reset={this.reset} />
      <div className="memoryContainer">
 
