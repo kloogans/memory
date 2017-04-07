@@ -6,8 +6,22 @@ class App extends Component {
 state = {
   moves: ['happy', 'ill', 'mad', 'quiet', 'suspicious', 'ninja', 'tongue', 'bored', 'happy', 'ill', 'mad', 'quiet', 'suspicious', 'ninja', 'tongue', 'bored'],
   picks: [],
-  matched: []
+  matched: [],
+  gameOver: false,
+  victory: false
 }
+
+shuffle = (arr) => {
+    for (let i = arr.length-1; i >=0; i--) {
+
+        let randomIndex = Math.floor(Math.random()*(i+1))
+        let itemAtIndex = arr[randomIndex]
+
+        arr[randomIndex] = arr[i]
+        arr[i] = itemAtIndex
+    }
+    return arr;
+  }
 
 checkCard = (newCard) => {
     if (this.state.picks.includes(newCard)) return
@@ -45,10 +59,29 @@ checkCard = (newCard) => {
       })
     }, 2000)
   }
+
+  reset = () => {
+    this.setState({moves: this.shuffle(this.state.moves),
+    turned: [],
+    matched: [],
+    gameOver: false,
+    victory: false})
+  }
+
   render() {
+    let modalState = 'App'
+    if (this.state.gameOver === true) {
+      modalState = 'App modal'
+    }
+    if (this.state.gameOver === true) {
+      modalState = 'App'
+    }
    return (
+     <div className={modalState}>
+     <Modal reset={this.reset} />
      <div className="memoryContainer">
-       <h1>{this.props.turn}</h1>
+
+       {/* <h1>Stuff Here</h1> */}
        <div className="memoryGame">
          <div className="memoryRow">
            <Card move={this.state.moves[0]} hidden={!this.state.picks.includes(0)} checkCard={this.checkCard} index={0} matched={this.state.matched.includes(0)} />
@@ -75,8 +108,8 @@ checkCard = (newCard) => {
            <Card move={this.state.moves[15]} hidden={!this.state.picks.includes(15)} checkCard={this.checkCard} index={15} matched={this.state.matched.includes(15)} />
          </div>
        </div>
-       <Modal />
        </div>
+     </div>
              )
            }
          }

@@ -161,12 +161,47 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 body:not(.modal) .overlay {
   display: none;
 }
 
-body.modal main {
+body.modal .memoryContainer {
   filter: blur(7px);
+}
+
+.dialog {
+  background-color: rgba(240, 240, 240, 1);
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 2em;
+  color: $black;
+  text-align: center;
+  padding: 2em;
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: $radius;
+  box-shadow: 0 0 20px #333;
+  z-index: 1;
+}
+
+button {
+  border: 0;
+  color: $white;
+  background-color: rgb(249, 126, 159);
+  font-size: 1em;
+  height: 50px;
+  width: 50%;
+  border-radius: $radius;
+  transition: $transition;
+
+}
+
+button:hover {
+  background-color: $niceYellow;
+  color: $black;
 }
