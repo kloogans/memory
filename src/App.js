@@ -46,7 +46,8 @@ checkCard = (newCard) => {
           window.setTimeout(() => {
             this.setState({
               picks: [],
-              matched: []
+              matched: [],
+              gameOver: true
             })
           }, 3000)
 
@@ -69,16 +70,10 @@ checkCard = (newCard) => {
   }
 
   render() {
-    let modalState = 'App'
-    if (this.state.gameOver === true) {
-      modalState = 'App modal'
-    }
-    if (this.state.gameOver === false) {
-      modalState = 'App'
-    }
+    if (this.state.gameOver) {
+      return <Modal />
+    } else {
    return (
-     <div className="modalContainer">
-     <Modal reset={this.reset} />
      <div className="memoryContainer">
 
        {/* <h1>Stuff Here</h1> */}
@@ -108,9 +103,10 @@ checkCard = (newCard) => {
            <Card move={this.state.moves[15]} hidden={!this.state.picks.includes(15)} checkCard={this.checkCard} index={15} matched={this.state.matched.includes(15)} />
          </div>
        </div>
-       </div>
      </div>
+
              )
            }
          }
+       }
 export default App;

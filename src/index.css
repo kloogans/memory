@@ -172,10 +172,6 @@ body {
   align-items: center;
 }*/
 
-body:not(.modal) .overlay {
-  display: none;
-}
-
 body.modal .memoryContainer {
   filter: blur(7px);
 }
