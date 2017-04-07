@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 
 class Card extends Component {
-
   _click = () => {
-    console.log('you clicked me')
-    this.props.flipCard(this.props.index)
+    this.props.checkCard(this.props.index)
   }
 
   render() {
-    const revealed = this.props.revealed ? 'revealed' : ''
-    return (
-      <div
-        onClick={this._click}
-        className={`${this.props.value}
-        back ${revealed}`}>
-        </div>
-    )
+    const matched = this.props.matched ? 'matched' : null
+    const hidden = this.props.hidden ? 'hidden' : null
+    return <div className="memoryBox" onClick={this._click}>
+      <div className={[this.props.move, hidden, matched].join(' ')}></div>
+    </div>
   }
 }
-
 export default Card

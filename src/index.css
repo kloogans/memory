@@ -7,6 +7,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url('img/mountains.jpg'), rgb(7, 167, 236);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -41,97 +46,127 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0.2em;
+  margin: 0.2em 0.1em;
   width: 100px;
   height:100px;
-  border-radius: 5px;
-  background-color: rgb(65, 236, 44);
+  border-radius: 7px;
+  background-color: rgba(236, 96, 7, 0.8);
 }
 
 /*Icons*/
 
 /*Hides/Shows icon on click*/
-.hidden{
+
+.matched {
+  filter: blur(5px);
+}
+
+.hidden:not(.matched) {
+  background-image: url('img/info.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.ill {
+  background-image: url('img/ill.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.happy {
+  background-image: url('img/happy.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.mad {
+  background-image: url('img/mad.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.quiet {
+  background-image: url('img/quiet.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.suspicious {
+  background-image: url('img/suspicious.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.ninja {
+  background-image: url('img/ninja.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.tongue {
+  background-image: url('img/tongue-out.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.bored {
+  background-image: url('img/bored.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body:not(.modal) .overlay {
   display: none;
 }
 
-.back {
-  background-image: url('img/pokeballs.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 70px;
-  height: 70px;
-}
-
-.revealed.pokeball {
-  background-image: url('img/pokeball.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 70px;
-  height: 70px;
-}
-
-.revealed.pikachu {
-  background-image: url('img/pikachu.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 70px;
-  height: 70px;
-}
-
-.revealed.charmander {
-  background-image: url('img/charmander.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 70px;
-  height: 70px;
-}
-
-.revealed.bulbasaur {
-  background-image: url('img/bullbasaur.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 70px;
-  height: 70px;
-}
-
-.revealed.squirtle {
-  background-image: url('img/squirtle.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 70px;
-  height: 70px;
-}
-
-.revealed.jigglypuff {
-  background-image: url('img/jigglypuff.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 70px;
-  height: 70px;
-}
-
-.revealed.psyduck {
-  background-image: url('img/psyduck.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 70px;
-  height: 70px;
-}
-
-.revealed.snorlax {
-  background-image: url('img/snorlax.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 70px;
-  height: 70px;
+body.modal main {
+  filter: blur(7px);
 }
