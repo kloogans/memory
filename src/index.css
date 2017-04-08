@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
 html {
   min-height: 100%;
 }
@@ -7,23 +9,24 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('img/mountains.jpg'), rgb(7, 167, 236);
+  background: url('img/mountains.jpg'), linear-gradient(228deg, #07a7ec, #0777ec, #e65c44);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-blend-mode: overlay;
+  background-blend-mode: darken;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   height: 100%;
 }
 
 .memoryContainer {
+  height: 100%;
+  margin-top: 25vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50%;
 }
 
 .memoryGame {
@@ -34,11 +37,13 @@ body {
   margin: 0.2em;
   width: 400px;
   height: 400px;
+  animation: fadeInUp 1.5s;
 }
 
 .memoryRow {
   width: 400px;
   margin: 0;
+  perspective: 1000;
 }
 
 .memoryBox {
@@ -50,7 +55,33 @@ body {
   width: 100px;
   height:100px;
   border-radius: 7px;
-  background-color: rgba(236, 96, 7, 0.8);
+  background: linear-gradient(to top, rgba(241, 101, 41, 0.8) 50%, rgba(241, 77, 41, 0.8) 50%);
+  background-size: 100% 200%;
+  animation: fadein 1.7s;
+  transition: background-position 1.3s;
+}
+
+.memoryBox:hover {
+  background-position: 0 -100%;
+}
+@keyframes fadein {
+    from {
+      opacity: 0;
+     }
+    to   {
+      opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      margin-top: 8em;
+     }
+    to   {
+      opacity: 1;
+      margin-top: 0.2em;
+    }
 }
 
 /*Icons*/
@@ -58,7 +89,11 @@ body {
 /*Hides/Shows icon on click*/
 
 .matched {
-  filter: blur(5px);
+  transition: 0.6s;
+	transform-style: preserve-3d;
+	transform: rotateY(360deg);
+  box-shadow: 3px 5px 10px 0px rgba(0,0,0,0.50);
+  border-radius: 50%;
 }
 
 .hidden:not(.matched) {
@@ -69,7 +104,14 @@ body {
   width: 70px;
   height: 70px;
   transition: all 0.5s ease;
+  animation: fadein 3s;
 }
+
+/*.matched:not(.hidden) {
+  transition: 0.6s;
+	transform-style: preserve-3d;
+	transform: rotateY(900deg);
+}*/
 
 .ill {
   background-image: url('img/ill.svg');
@@ -220,5 +262,5 @@ button:hover {
   color: #333;
   width: 230px;
   border-radius: 13px;
-  border: 2px dashed rgb(7, 167, 236);
+  border: 2px dashed #07a7ec;
 }

@@ -7,12 +7,6 @@ class Modal extends Component {
   }
 
   render () {
-  //   let victoryMessage = ''
-  //   if (this.props.vitory === true) {
-  //     victoryMessage = 'You Won!'
-  //   } else if (this.props.victory === false) {
-  //     victoryMessage = 'You lost'
-  //   }
     return (
       <div className="overlay">
   <div className="dialog">
