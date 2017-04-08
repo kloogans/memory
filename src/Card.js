@@ -8,7 +8,7 @@ class Card extends Component {
   render() {
     const matched = this.props.matched ? 'matched' : null
     const hidden = this.props.hidden ? 'hidden' : null
-    return <div className="memoryBox" onClick={this._click}>
+    return <div className="memoryBox bounce" onClick={this._click}>
       <div className={[this.props.move, hidden, matched].join(' ')}></div>
     </div>
   }

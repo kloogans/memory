@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 
 html {
   min-height: 100%;
@@ -7,7 +8,6 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: url('img/mountains.jpg'), linear-gradient(228deg, #07a7ec, #0777ec, #e65c44);
   background-repeat: no-repeat;
@@ -16,13 +16,39 @@ body {
   background-blend-mode: darken;
   margin: 0;
   padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo {
+  background-image: url('img/logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 300px;
+  height: 100px;
+  animation: flipInX 0.9s ease;
+}
+
+main {
+  flex: 1;
+  margin: 0;
+}
+
+footer {
+  color: #f7f7f7;
+  font-size: 0.7em;
 }
 
 .memoryContainer {
   height: 100%;
-  margin-top: 25vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,13 +63,31 @@ body {
   margin: 0.2em;
   width: 400px;
   height: 400px;
-  animation: fadeInUp 1.5s;
+  animation: fadeIn 1.5s;
 }
 
-.memoryRow {
+.memoryRow1 {
   width: 400px;
   margin: 0;
-  perspective: 1000;
+  animation: flipInY 0.9s ease;
+}
+
+.memoryRow2 {
+  width: 400px;
+  margin: 0;
+  animation: fadeIn 0.9s linear, flipInY 0.9s ease 0.1s;
+}
+
+.memoryRow3 {
+  width: 400px;
+  margin: 0;
+  animation: fadeIn 0.9s linear, flipInY 0.9s ease 0.2s;
+}
+
+.memoryRow4 {
+  width: 400px;
+  margin: 0;
+  animation: fadeIn 0.9s linear, flipInY 0.9s ease 0.3s;
 }
 
 .memoryBox {
@@ -57,8 +101,10 @@ body {
   border-radius: 7px;
   background: linear-gradient(to top, rgba(241, 101, 41, 0.8) 50%, rgba(241, 77, 41, 0.8) 50%);
   background-size: 100% 200%;
-  animation: fadein 1.7s;
-  transition: background-position 1.3s;
+  cursor: pointer;
+  cursor: hand;
+  /*animation: fadein 1.7s;*/
+  transition: background-position 0.3s;
 }
 
 .memoryBox:hover {
@@ -73,14 +119,12 @@ body {
     }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeIn {
     from {
       opacity: 0;
-      margin-top: 8em;
      }
     to   {
       opacity: 1;
-      margin-top: 0.2em;
     }
 }
 
@@ -204,7 +248,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition: all 0.8s linear;
+  animation: fadeInDown 0.8s linear;
 }
 
 /*div.App {
@@ -221,7 +265,7 @@ body.modal {
 
 .dialog {
   background-color: rgba(240, 240, 240, 1);
-  font-family: 'Roboto';
+  font-family: 'Open Sans';
   font-weight: 100;
   font-size: 2em;
   color: #333;
@@ -235,7 +279,7 @@ body.modal {
   border-radius: 7px;
   box-shadow: 0 0 20px #333;
   z-index: 1;
-  transition: all 0.5s linear;
+  animation: flipInY 0.8s linear;
 }
 
 button {
@@ -252,6 +296,7 @@ button {
   width: 200px;
   border-radius: 7px;
   transition: all 0.4s linear;
+  cursor: pointer;
 
 }
 
@@ -260,7 +305,6 @@ button:hover {
   outline: 0;
   background-color: transparent;
   color: #333;
-  width: 230px;
   border-radius: 13px;
   border: 2px dashed #07a7ec;
 }
