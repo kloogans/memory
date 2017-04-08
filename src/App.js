@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from './Card';
 import Modal from './Modal'
 import Logo from './Logo'
+import Music from './Music'
 
 class App extends Component {
 state = {
@@ -105,6 +106,7 @@ checkCard = (newCard) => {
          </div>
        </main>
        <footer>
+         <Music />
          <p>&copy; James O'Brien 2017</p>
        </footer>
     </div>
