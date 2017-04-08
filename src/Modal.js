@@ -9,13 +9,13 @@ class Modal extends Component {
   render () {
     return (
       <div className="overlay">
-  <div className="dialog">
-    <h3>You Won!</h3>
-    <button className="resetButton" onClick={this._reset}>
-      <i className="fa fa-refresh"></i>
-    </button>
-  </div>
-  </div>
+        <div className="dialog">
+          <h3>You Won!</h3>
+          <button className="resetButton" onClick={this._reset}>
+            <i className="fa fa-refresh"></i>
+          </button>
+        </div>
+      </div>
     )
   }
 }

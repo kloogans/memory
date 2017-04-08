@@ -47,7 +47,10 @@ footer {
   font-size: 0.7em;
 }
 
+/*GameBoard*/
+
 .memoryContainer {
+  margin-top: -1em;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -103,20 +106,11 @@ footer {
   background-size: 100% 200%;
   cursor: pointer;
   cursor: hand;
-  /*animation: fadein 1.7s;*/
   transition: background-position 0.3s;
 }
 
 .memoryBox:hover {
   background-position: 0 -100%;
-}
-@keyframes fadein {
-    from {
-      opacity: 0;
-     }
-    to   {
-      opacity: 1;
-    }
 }
 
 @keyframes fadeIn {
@@ -127,8 +121,6 @@ footer {
       opacity: 1;
     }
 }
-
-/*Icons*/
 
 /*Hides/Shows icon on click*/
 
@@ -148,14 +140,10 @@ footer {
   width: 70px;
   height: 70px;
   transition: all 0.5s ease;
-  animation: fadein 3s;
+  animation: fadeIn 3s;
 }
 
-/*.matched:not(.hidden) {
-  transition: 0.6s;
-	transform-style: preserve-3d;
-	transform: rotateY(900deg);
-}*/
+/*Icons*/
 
 .ill {
   background-image: url('img/ill.svg');
@@ -237,6 +225,8 @@ footer {
   transition: all 0.5s ease;
 }
 
+/*Modal*/
+
 .overlay {
   position: fixed;
   top: 0;
@@ -248,23 +238,15 @@ footer {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  animation: fadeInDown 0.8s linear;
+  animation: fadeIn 0.6s linear;
 }
-
-/*div.App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}*/
 
 body.modal {
   filter: blur(7px);
 }
 
 .dialog {
-  background-color: rgba(240, 240, 240, 1);
+  background-color: rgba(240, 240, 240, 0.85);
   font-family: 'Open Sans';
   font-weight: 100;
   font-size: 2em;
