@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 class Modal extends Component {
 
-  // _reset = () => {
-  //   this.props.reset()
-  // }
+  _reset = () => {
+    this.props.reset()
+  }
 
   render () {
   //   let victoryMessage = ''
@@ -16,9 +16,9 @@ class Modal extends Component {
     return (
       <div className="overlay">
   <div className="dialog">
-    <h3>You Won</h3>
+    <h3>You Won!</h3>
     <button className="resetButton" onClick={this._reset}>
-      Again
+      <i className="fa fa-refresh"></i>
     </button>
   </div>
   </div>

@@ -49,7 +49,7 @@ checkCard = (newCard) => {
               matched: [],
               gameOver: true
             })
-          }, 3000)
+          }, 1000)
 
         }
       })
@@ -58,7 +58,7 @@ checkCard = (newCard) => {
       this.setState({
         picks: []
       })
-    }, 2000)
+    }, 700)
   }
 
   reset = () => {
@@ -71,7 +71,7 @@ checkCard = (newCard) => {
 
   render() {
     if (this.state.gameOver) {
-      return <Modal />
+      return <Modal reset={this.reset} />
     } else {
    return (
      <div className="memoryContainer">
