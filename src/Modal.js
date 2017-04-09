@@ -12,7 +12,7 @@ class Modal extends Component {
       <div className="overlay">
         <div className="dialog">
           <h3>You Won!</h3>
-          <button className="resetButton" onClick={this._reset}>
+          <button className="victory" onClick={this._reset}>
             <i className="fa fa-refresh"></i>
           </button>
           <MusicWin />

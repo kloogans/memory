@@ -12,7 +12,7 @@
     "surge": "^0.19.0"
   },
   "scripts": {
-    "deploy": "npm run build && surge ./public --domain memory.jamesobrien.surge.sh",
+    "deploy": "npm run build && surge ./ --domain memory.jamesobrien.surge.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

@@ -1,15 +1,28 @@
 import React, { Component } from 'react'
+import Buttons from './Buttons'
 import oliver from '../public/music/Oliver.mp3'
 
 class Music extends Component {
 
+  playAudio() {
+    this.refs.player.play()
+  }
+
+  pauseAudio() {
+    this.refs.player.pause()
+  }
 
   render () {
     let song = oliver
 
-    return <audio id="player" autoPlay loop>
+    return <div>
+    <audio ref="player" id="player" autoPlay loop>
         <source src={song} type='audio/mp3' />
       </audio>
+
+      <Buttons playAudio={this.playAudio.bind(this)}
+        pauseAudio={this.pauseAudio.bind(this)} />
+      </div>
   }
 }
 

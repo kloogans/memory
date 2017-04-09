@@ -264,7 +264,7 @@ body.modal {
   animation: flipInY 0.8s linear;
 }
 
-button {
+button.victory {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -282,11 +282,88 @@ button {
 
 }
 
-button:focus,
-button:hover {
+button.victory:focus,
+button.victory:hover {
   outline: 0;
   background-color: rgba(236, 234, 7, 0.2);
   color: #333;
   border-radius: 13px;
   border: 2px dashed #07a7ec;
+}
+
+.audioButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+button.playButton,
+button.pauseButton {
+  border: none;
+  background-color: transparent;
+  font-size: 2em;
+  color: #f7f7f7;
+  width: 50px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+button.playButton:hover,
+button.pauseButton:hover,
+button.playButton:focus,
+button.pauseButton:focus  {
+  outline: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 2em;
+  color: #07a7ec;
+  cursor: pointer;
+}
+
+button.playButton:focus,
+button.playButton:active {
+  animation: pulse 0.62s infinite;
+}
+
+button.pauseButton:focus,
+button.pauseButton:active {
+  color: #ec6007;
+  animation: pulsePause 0.62s infinite;
+}
+
+@keyframes pulse {
+
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.10, 1.10, 1.10);
+    transform: scale3d(1.10, 1.10, 1.10);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulsePause {
+
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.10, 1.10, 1.10);
+    transform: scale3d(1.10, 1.10, 1.10);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }

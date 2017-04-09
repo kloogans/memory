@@ -10,7 +10,9 @@ state = {
   picks: [],
   matched: [],
   gameOver: false,
-  victory: false
+  victory: false,
+  playing: false,
+  songs: []
 }
 
 shuffle = (arr) => {
