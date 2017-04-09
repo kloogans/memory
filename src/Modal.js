@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import MusicWin from './MusicWin'
 
 class Modal extends Component {
 
@@ -14,6 +15,7 @@ class Modal extends Component {
           <button className="resetButton" onClick={this._reset}>
             <i className="fa fa-refresh"></i>
           </button>
+          <MusicWin />
         </div>
       </div>
     )
